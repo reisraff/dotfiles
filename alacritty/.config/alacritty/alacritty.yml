@@ -1,0 +1,47 @@
+# Live config reload (changes require restart)
+live_config_reload: true
+
+# The value `0.0` is completely transparent and `1.0` is opaque.
+background_opacity: 0.9
+
+# fonts
+font:
+  normal:
+    Default:
+    style: Regular
+    family: NotoMono
+  size: 11.0
+
+# colors
+colors:
+  primary:
+   background: '#000020'
+   foreground: '#1aa260'
+
+  # Normal colors
+  normal:
+   black:   '#000000'
+   red:     '#d35246'
+   green:   '#1aa260'
+   yellow:  '#ffce44'
+   blue:    '#4c8bf5'
+   magenta: '#8b008b'
+   cyan:    '#265b5f'
+   white:   '#ebecf0'
+
+  # Bright colors
+  bright:
+   black: '#111111'
+   red: '#e46357'
+   green: '#2bb371'
+   yellow: '#10df55'
+   blue: '#5d9d06'
+   magenta: '#9c119c'
+   cyan: '#376c70'
+   white: '#fcfe01'
+
+cursor:
+  style:
+    shape: Block
+    blinking: Always
+  blink_interval: 500

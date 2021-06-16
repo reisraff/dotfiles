@@ -1,0 +1,12 @@
+[user]
+	email = reisraff@gmail.com
+	name = Rafael Reis
+	signingkey = 787A44C1C6D12F3275FEF0DBF735159E371E9152
+[alias]
+	changelog = log --pretty=format:'- %s (%h) (%ae) - %cd' --date=short
+	alias = !git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+	purge = !git checkout master && git branch | grep -v master | xargs git branch -D
+	sync = !git fetch origin -a --prune
+	update = !git pull origin $(git branch | grep '*' | awk '{print $2}') 
+[commit]
+	gpgsign = true
