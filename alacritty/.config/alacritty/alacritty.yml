@@ -16,7 +16,7 @@ font:
 colors:
   primary:
    background: '#000020'
-   foreground: '#1aa260'
+   foreground: '#8edbd7'
 
   # Normal colors
   normal:
