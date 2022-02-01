@@ -8,5 +8,7 @@
 	purge = !git checkout master && git branch | grep -v master | xargs git branch -D
 	sync = !git fetch origin -a --prune
 	update = !git pull origin $(git branch | grep '*' | awk '{print $2}') 
+	checkpatch = !git apply --stat $1 && git apply --check $1
+	applypatch = !git am --signoff < $1
 [commit]
 	gpgsign = true
