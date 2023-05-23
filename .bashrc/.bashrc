@@ -134,5 +134,4 @@ gsettings set org.gnome.desktop.peripherals.touchpad click-method areas >/dev/nu
 . "$HOME/.cargo/env"
 source /opt/alacritty/extra/completions/alacritty.bash
 
-export CLOUDSDK_PYTHON=/usr/bin/python
-
+export CLOUDSDK_PYTHON=/usr/bin/python3

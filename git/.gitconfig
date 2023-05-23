@@ -12,3 +12,5 @@
 	applypatch = !git am --signoff < $1
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = master
