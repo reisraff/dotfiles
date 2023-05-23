@@ -133,3 +133,6 @@ v4lctl bright 90%
 gsettings set org.gnome.desktop.peripherals.touchpad click-method areas >/dev/null 2>&1
 . "$HOME/.cargo/env"
 source /opt/alacritty/extra/completions/alacritty.bash
+
+export CLOUDSDK_PYTHON=/usr/bin/python
+
