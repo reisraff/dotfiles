@@ -135,3 +135,5 @@ gsettings set org.gnome.desktop.peripherals.touchpad click-method areas >/dev/nu
 source /opt/alacritty/extra/completions/alacritty.bash
 
 export CLOUDSDK_PYTHON=/usr/bin/python3
+
+alias kubectl-usage='kubectl get nodes | grep node | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo   {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
