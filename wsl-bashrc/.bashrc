@@ -128,4 +128,4 @@ if [ -f '/home/reisraff/google-cloud-sdk/path.bash.inc' ]; then . '/home/reisraf
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/reisraff/google-cloud-sdk/completion.bash.inc' ]; then . '/home/reisraff/google-cloud-sdk/completion.bash.inc'; fi
 
-alias kubectl-usage='kubectl get nodes | grep node | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo   {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
+alias kubectl-usage='kubectl get nodes | grep -v NAME | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo   {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
