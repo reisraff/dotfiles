@@ -116,7 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias subl='"/mnt/c/Program Files/Sublime Text 3/subl.exe"'
+alias subl='"/mnt/c/Program Files/Sublime Text/subl.exe"'
 alias docker-compose='docker compose'
 
 export GPG_TTY=$(tty)
@@ -129,3 +129,8 @@ if [ -f '/home/reisraff/google-cloud-sdk/path.bash.inc' ]; then . '/home/reisraf
 if [ -f '/home/reisraff/google-cloud-sdk/completion.bash.inc' ]; then . '/home/reisraff/google-cloud-sdk/completion.bash.inc'; fi
 
 alias kubectl-usage='kubectl get nodes | grep -v NAME | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo   {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
+
+. "$HOME/.cargo/env"
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
