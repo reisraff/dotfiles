@@ -122,15 +122,26 @@ alias docker-compose='docker compose'
 export GPG_TTY=$(tty)
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/reisraff/google-cloud-sdk/path.bash.inc' ]; then . '/home/reisraff/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/reisraff/google-cloud-sdk/completion.bash.inc' ]; then . '/home/reisraff/google-cloud-sdk/completion.bash.inc'; fi
-
 alias kubectl-usage='kubectl get nodes | grep -v NAME | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo   {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
 
 . "$HOME/.cargo/env"
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+
+#powershell.exe -Command netsh int ipv4 set interface "Wi-Fi" forwarding=enable > /dev/null 2>&1
+powershell.exe -Command netsh int ipv4 set interface "Wi-Fi" forwarding=enable
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/src/google-cloud-sdk/path.bash.inc' ]; then . '/usr/local/src/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/src/google-cloud-sdk/completion.bash.inc' ]; then . '/usr/local/src/google-cloud-sdk/completion.bash.inc'; fi
+
+export PATH=$PATH:/usr/local/src/google-cloud-sdk/bin/
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$(yarn global bin):$PATH"
